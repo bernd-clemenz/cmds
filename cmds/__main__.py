@@ -4,8 +4,11 @@
 #
 
 import argparse
-
+import sys
 
 if __name__ == '__main__':
     arg_parser = argparse.ArgumentParser(description="simple command executor")
-    arg_parser.add_argument('--conf', type=str, default='aloga.ini')
+    arg_parser.add_argument('--conf', type=str, default='cmds.ini')
+    
+    
+  sys.exit(0)

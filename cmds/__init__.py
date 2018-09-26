@@ -1,3 +1,7 @@
+"""
+Initialize the command executor module
+(c) 2018 ISC Clemenz & Weinbrecht GmbH
+"""
 import configparser
 import dateutil.parser
 import logging
@@ -26,6 +30,7 @@ def init(config_name):
     CFG = configparser.ConfigParser()
     CFG.read(config_name)
     
+    # 2. initialize logging
     LOG = logging.getLogger(name)
     lv_cfg = CFG[name]['log.level']
     lv_mp = {'INFO': logging.INFO,
@@ -49,4 +54,4 @@ def init(config_name):
     LOG.addHandler(rh)
     LOG.addHandler(ch)
     
-    LOG.info(name + ' initialized')
+    LOG.info(name + ' initialized.')
